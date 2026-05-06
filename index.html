@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉義美食指南｜首頁</title>
+    <style>
+        /* 共用基礎樣式 */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* 導覽列樣式 */
+        nav {
+            background-color: #ff7043;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item > a {
+            display: block;
+            padding: 20px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .nav-item:hover > a {
+            background-color: #e64a19;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown li a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        .dropdown li a:hover {
+            background-color: #ffe0b2;
+            color: #e64a19;
+        }
+
+        /* 👑 首頁主視覺 (已修改為圖片橫幅) */
+        .hero {
+            margin-top: 60px; /* 避開上方的固定導覽列 */
+            width: 100%;
+            background-color: #f6ece1; /* 配合圖片邊緣的米黃色底色 */
+            text-align: center;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 1200px; /* 限制最大寬度，大螢幕觀看時才不會過度拉伸 */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 首頁歡迎區塊 */
+        .welcome-section {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .welcome-section h2 {
+            color: #ff7043;
+        }
+
+        @media (max-width: 768px) {
+            .nav-item > a {
+                padding: 15px 10px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">在地美食 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="alou.html">阿樓師</a></li>
+                        <li><a href="minxiong.html">民雄鵝肉亭</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">甜品飲料 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="taocheng.html">桃城</a></li>
+                        <li><a href="yiliang.html">一涼</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">咖啡店 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="daisy.html">Daisy的雜貨店</a></li>
+                        <li><a href="chunjin.html">賰金商行</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">異國料理 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="buzhano.html">布札諾</a></li>
+                        <li><a href="yingmi.html">穎覓食光</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">口袋名單 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="xinyuye.html">新御野</a></li>
+                        <li><a href="xiangzi.html">巷子裡小館</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 👑 主視覺橫幅區塊 (已刪除文字，替換為圖片) -->
+    <div class="hero">
+        <img src="主頁橫幅.jpg" alt="食在嘉大 推薦榜NO.1">
+    </div>
+
+    <!-- 歡迎區塊 -->
+    <div class="welcome-section">
+        <h2>歡迎來到我的嘉義美食名單！</h2>
+        <p>這裡收錄了我最愛的在地美食、咖啡廳與私房口袋名單。將滑鼠移到上方的分類，點擊店家名稱，就能看到詳細的地點、環境、價格與美食推薦囉！</p>
+    </div>
+
+</body>
+</html>

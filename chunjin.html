@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿樓師火雞肉飯｜嘉義美食指南</title>
+    <style>
+        /* 共用基礎樣式與導覽列 (與首頁相同) */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Microsoft JhengHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        nav {
+            background-color: #ff7043;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item > a {
+            display: block;
+            padding: 20px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .nav-item:hover > a {
+            background-color: #e64a19;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown li a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        .dropdown li a:hover {
+            background-color: #ffe0b2;
+            color: #e64a19;
+        }
+
+        /* 專屬頁面內容區塊 */
+        .content {
+            max-width: 900px;
+            margin: 100px auto 40px auto; /* 加上 margin-top: 100px 避開導覽列 */
+            padding: 0 20px;
+        }
+        .restaurant-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .category-badge {
+            display: inline-block;
+            background-color: #ffe0b2;
+            color: #e64a19;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .restaurant-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        .section-title {
+            color: #ff7043;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff7043;
+            padding-left: 10px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            background-color: #fafafa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .info-box h4 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* 回首頁按鈕 */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ff7043;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-btn:hover {
+            color: #e64a19;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .nav-item > a { padding: 15px 10px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導覽列 (與首頁一模一樣，確保跳轉無障礙) -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">首頁</a> <!-- 新增一個回首頁的選項 -->
+                </li>
+                <li class="nav-item">
+                    <a href="#">在地美食 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="alou.html">阿樓師</a></li>
+                        <li><a href="minxiong.html">民雄鵝肉亭</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">甜品飲料 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="taocheng.html">桃城</a></li>
+                        <li><a href="yiliang.html">一涼</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">咖啡店 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="daisy.html">Daisy的雜貨店</a></li>
+                        <li><a href="chunjin.html">賰金商行</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">異國料理 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="buzhano.html">布札諾</a></li>
+                        <li><a href="yingmi.html">穎覓食光</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">口袋名單 ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="xinyuye.html">新御野</a></li>
+                        <li><a href="xiangzi.html">巷子裡小館</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 單家店詳細介紹 -->
+    <div class="content">
+        <a href="index.html" class="back-btn">← 回到首頁</a>
+        
+        <div class="restaurant-card">
+            <span class="category-badge">咖啡店</span>
+            <h2 class="restaurant-title">賰金商行</h2>
+            
+            <!-- 等你有照片時，把下方的 div 換成 <img src="照片網址" class="image-placeholder"> -->
+            <div class="image-placeholder">上傳圖片後將替換此區塊</div>
+            
+            <h3 class="section-title">🤤 美食推薦</h3>
+            <p><strong>火雞肉片飯：</strong>肉片鮮嫩多汁不乾柴，淋上香氣四溢的雞油與油蔥，讓人一口接一口。必點排骨酥湯搭配！</p>
+            <p><strong>火雞肉飯：</strong>經典切丁火雞肉，搭配醃黃蘿蔔，是最道地的嘉義宵夜首選。</p>
+            
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>📍 地點與營業時間</h4>
+                    <p><strong>地址：</strong>嘉義市東區吳鳳北路102號<br>
+                       <strong>營業時間：</strong>16:00 - 00:00 (時間依店家公告為主)</p>
+                </div>
+                <div class="info-box">
+                    <h4>🚶‍♂️ 路線</h4>
+                    <p>距離文化路夜市步行約 8 分鐘，位於吳鳳北路上。附近汽車停車較不方便，建議騎機車或停在較遠的停車場再步行過來。</p>
+                </div>
+                <div class="info-box">
+                    <h4>🛋️ 環境</h4>
+                    <p>屬於傳統半開放式的小吃店環境，座位不多。晚餐與宵夜用餐尖峰時刻常常需要排隊與併桌，翻桌率很快。</p>
+                </div>
+                <div class="info-box">
+                    <h4>💰 價格</h4>
+                    <p>銅板價！火雞肉飯/肉片飯約落在 30~55 元，平均每人消費約 70~100 元即可吃飽，CP 值極高。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
